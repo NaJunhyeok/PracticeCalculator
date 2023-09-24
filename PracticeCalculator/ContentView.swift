@@ -29,7 +29,7 @@ struct ContentView: View {
                         Text("C")
                             .frame(width:80,
                                    height: 80)
-                            .background(.gray)
+                            .background(Color("NumberButton"))
                             .cornerRadius(40)
                             .foregroundColor(.white)
                             .font(.system(size:33))
@@ -40,7 +40,7 @@ struct ContentView: View {
                         Text("/")
                             .frame(width:80,
                                    height: 80)
-                            .background(.gray)
+                            .background(Color("NumberButton"))
                             .cornerRadius(40)
                             .foregroundColor(.white)
                             .font(.system(size:33))
@@ -51,7 +51,7 @@ struct ContentView: View {
                         Text("%")
                             .frame(width:80,
                                    height: 80)
-                            .background(.gray)
+                            .background(Color("NumberButton"))
                             .cornerRadius(40)
                             .foregroundColor(.white)
                             .font(.system(size:33))
@@ -60,7 +60,7 @@ struct ContentView: View {
                     Button{
                         
                     }label: {
-                        Text("/")
+                        Text("$")
                             .frame(width:80,
                                    height: 80)
                             .background(.orange)
@@ -79,7 +79,7 @@ struct ContentView: View {
                         Text("7")
                             .frame(width:80,
                                    height: 80)
-                            .background(.gray)
+                            .background(Color("NumberButton"))
                             .cornerRadius(40)
                             .foregroundColor(.white)
                             .font(.system(size:33))
@@ -90,7 +90,7 @@ struct ContentView: View {
                         Text("8")
                             .frame(width:80,
                                    height: 80)
-                            .background(.gray)
+                            .background(Color("NumberButton"))
                             .cornerRadius(40)
                             .foregroundColor(.white)
                             .font(.system(size:33))
@@ -101,7 +101,7 @@ struct ContentView: View {
                         Text("9")
                             .frame(width:80,
                                    height: 80)
-                            .background(.gray)
+                            .background(Color("NumberButton"))
                             .cornerRadius(40)
                             .foregroundColor(.white)
                             .font(.system(size:33))
@@ -121,96 +121,153 @@ struct ContentView: View {
 
                 }
                 HStack{
-                    Text("4")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.gray)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
-                    Text("5")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.gray)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
-                    Text("6")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.gray)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
-                    Text("-")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.orange)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
+                    Button{
+                        
+                    }label: {
+                        Text("4")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(Color("NumberButton"))
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
+
+                    Button{
+                        
+                    }label: {
+                        Text("5")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(Color("NumberButton"))
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
+
+                    Button{
+                        
+                    }label: {
+                        Text("6")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(Color("NumberButton"))
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
+
+                    Button{
+                        
+                    }label: {
+                        Text("-")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(.orange)
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
+
                 }
                 HStack{
-                    Text("1")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.gray)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
-                    Text("2")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.gray)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
-                    Text("3")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.gray)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
-                    Text("+")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.orange)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
+                    Button{
+                        
+                    }label: {
+                        Text("1")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(Color("NumberButton"))
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
+                    Button{
+                        
+                    }label: {
+                        Text("2")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(Color("NumberButton"))
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
+
+                    Button{
+                        
+                    }label: {
+                        Text("3")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(Color("NumberButton"))
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
+
+                    Button{
+                        
+                    }label: {
+                        Text("+")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(.orange)
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
+
                 }
                 HStack{
-                    Text("0")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.gray)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
-                    Text("0")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.gray)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
-                    Text(".")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.gray)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
-                    Text("=")
-                        .frame(width:80,
-                               height: 80)
-                        .background(.orange)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                        .font(.system(size:33))
+                    Button{
+                        
+                    }label: {
+                        Text("0")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(Color("NumberButton"))
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
+
+                    Button{
+                        
+                    }label: {
+                        Text("0")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(Color("NumberButton"))
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
+
+                    Button{
+                        
+                    }label: {
+                        Text(".")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(Color("NumberButton"))
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
+ 
+                    Button{
+                        
+                    }label: {
+                        Text("=")
+                            .frame(width:80,
+                                   height: 80)
+                            .background(.orange)
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .font(.system(size:33))
+                    }
                 }
-                
             }
         }
     }
