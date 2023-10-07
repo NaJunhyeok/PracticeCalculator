@@ -85,7 +85,7 @@ struct ContentView: View {
         [.seventh,.eighth,.nineth,.multiply],
         [.forth, .fifth,.sixth,.minus],
         [.first,.second,.third,.plus],
-        [.zero,.zero,.dot,.equal]
+        [.zero,.dot,.equal]
     ]
     
     var body: some View {
@@ -158,13 +158,38 @@ struct ContentView: View {
                             item in
                             Button{
                                 if totalNumber == "0"{
-                                    totalNumber = "7"
+                                    
+                                    if item == .clear{
+                                        totalNumber = "0"
+                                    }
+                                    else if (item == .plus ||
+                                             item == .minus ||
+                                             item == .multiply ||
+                                             item == .divide){
+                                        totalNumber = "Error"
+                                    }
+                                    else{
+                                        totalNumber = item.buttonDisplayName
+                                    }
                                 }else{
-                                    totalNumber += "7"
+                                    if item == .clear{
+                                        totalNumber = "0"
+                                    }
+                                    else if item == .plus ||
+                                             item == .minus ||
+                                             item == .multiply ||
+                                             item == .divide{
+                                        totalNumber = "Error"
+                                    }
+                                    else{
+                                        totalNumber += item.buttonDisplayName
+                                    }
+
                                 }
                             }label: {
                                 Text(item.buttonDisplayName)
-                                    .frame(width:80,
+                                    .frame(width: item ==
+                                        .some(.zero) ? 160 : 80,
                                            height: 80)
                                     .background(item.backgroundColor)
                                     .cornerRadius(40)
