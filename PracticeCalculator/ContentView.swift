@@ -179,12 +179,14 @@ struct ContentView: View {
                                 }else{
                                     if item == .clear{
                                         totalNumber = "0"
+                                        
                                         isNotEditing = true
                                     }
                                     else if item == .plus {
                                         tempNumber = Int(totalNumber) ?? 0
                                         operatorType = .plus
                                         isNotEditing = true
+                                    
                                     }
                                     else if item == .multiply {
                                         tempNumber = Int(totalNumber) ?? 0
