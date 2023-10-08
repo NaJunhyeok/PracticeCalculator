@@ -46,11 +46,11 @@ enum ButtonType:String{
         case .multiply:
             return "X"
         case .divide:
-            return "$"
+            return "/"
         case .percent:
             return "%"
         case .opposite:
-            return "/"
+            return "+/-"
         case .clear:
             return "C"
         default:
@@ -81,6 +81,7 @@ struct ContentView: View {
     @State private var totalNumber: String = "0"
     @State var tempNumber: Int = 0
     @State var operatorType: ButtonType = .clear
+    @State var isNotEditing: Bool = true
     
     private let buttonData: [[ButtonType]] = [
         [.clear, .opposite, .percent, .divide],
@@ -159,10 +160,11 @@ struct ContentView: View {
                         ForEach(line, id: \.self){
                             item in
                             Button{
-                                if totalNumber == "0"{
+                                if isNotEditing{
                                     
                                     if item == .clear{
                                         totalNumber = "0"
+                                        isNotEditing = true
                                     }
                                     else if (item == .plus ||
                                              item == .minus ||
@@ -173,25 +175,26 @@ struct ContentView: View {
                                     else{
                                         totalNumber = item.buttonDisplayName
                                     }
+                                    isNotEditing = false
                                 }else{
                                     if item == .clear{
                                         totalNumber = "0"
+                                        isNotEditing = true
                                     }
                                     else if item == .plus {
                                         tempNumber = Int(totalNumber) ?? 0
                                         operatorType = .plus
-                                        totalNumber = "0"
+                                        isNotEditing = true
                                     }
                                     else if item == .multiply {
                                         tempNumber = Int(totalNumber) ?? 0
                                         operatorType = .multiply
-                                        totalNumber = "0"
-                                        
+                                        isNotEditing = true
                                     }
                                     else if item == .minus{
                                         tempNumber = Int(totalNumber) ?? 0
                                         operatorType = .minus
-                                        totalNumber = "0"
+                                        isNotEditing = true
                                     }
                                     else if item == .equal{
                                         if operatorType == .plus{
@@ -212,9 +215,9 @@ struct ContentView: View {
                                 }
                             }label: {
                                 Text(item.buttonDisplayName)
-                                    .frame(width: item ==
-                                        .some(.zero) ? 160 : 80,
-                                           height: 80)
+                                    .bold()
+                                    .frame(width: calculateButtonWidth(button: item),
+                                           height: calculateButtonHeigth(button: item))
                                     .background(item.backgroundColor)
                                     .cornerRadius(40)
                                     .foregroundColor(item.forgroundColor)
@@ -225,6 +228,18 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    private func calculateButtonWidth(button buttonType: ButtonType)->CGFloat{
+        // (전체너비 - 5*10)/4
+        switch buttonType {
+        case .zero:
+            return (UIScreen.main.bounds.width - 5*10)/4 * 2
+        default:
+            return (UIScreen.main.bounds.width - 5*10) / 4
+        }
+    }
+    private func calculateButtonHeigth(button: ButtonType)->CGFloat{
+        return (UIScreen.main.bounds.width - 5*10)/4
     }
 }
 
